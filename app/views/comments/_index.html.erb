@@ -1,7 +1,5 @@
 <%= render 'layouts/flash' %>
-<div class="post-content show-box">
-  <%= simple_format(post.title) %>
-</div>
+<hr>
 <% comments.order(created_at: :desc).each do |comment| %>
   <% if comment.id.present? %>
     <div class="show-comment show-box" id="comment_<%= comment.id %>">
@@ -19,5 +17,6 @@
         <span class="badge"><%= link_to t('.edit'), edit_post_comment_path(post, comment), remote: true %></span>
 
     </div>
+    <hr>
   <% end %>
 <% end %>

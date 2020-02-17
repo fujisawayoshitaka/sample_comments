@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
         flash.now[:notice] = 'コメントが投稿されました'
         format.js { render :index }
       else
-        flash.now[:notice] = 'コメントの投稿に失敗しました'
+        flash.now[:notice] = '文字数は1文字以上150文字以内にしてください'
         format.js { render :error }
       end
     end
@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
           flash.now[:notice] = 'コメントが編集されました'
           format.js { render :index }
         else
-          flash.now[:notice] = 'コメントの編集に失敗しました'
+          flash.now[:notice] = '文字数は1文字以上150文字以内にしてください'
           format.js { render :edit_error }
         end
       end
